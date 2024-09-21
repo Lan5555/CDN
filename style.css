@@ -1,0 +1,78 @@
+*{
+  transition: all 1s ease-out;
+  font-family: 'playfair Display',serif;
+  
+}
+:root{
+  --shadow-box: 0 0.15rem 1.75rem 0 rgba(33 40 50 / 15%);
+}
+@media only screen and (max-width:600px){
+.toast{
+  width:70%;
+  height:90px;
+  position: fixed;
+  top:0;
+  overflow: auto;
+  box-shadow: var(--shadow-box);
+  display: none;
+  border-radius: 5px;
+  animation:slideIn 0.3s ease-in-out;
+}
+.progressBar{
+  position: absolute;
+  width:100%;
+  bottom: 0;
+  height:5px;
+  background-color: white;
+  
+  }
+
+  .header{
+    text-align: center;
+    font-size: 14pt;
+  }
+  .text{
+    padding: 5px;
+    font-size: 11pt;
+  }
+  
+
+}
+@media only screen and (min-width:542px){
+  .toast {
+    width: 40%;
+    height: 90px;
+    box-shadow: var(--shadow-box);
+    position: fixed;
+    top:0;
+    display: none;
+    border-radius:5px;
+    animation:slideIn 0.3s ease-in-out;
+  }
+  .progressBar{
+  position: absolute;
+  width:100%;
+  bottom: 0;
+  height:5px;
+  background-color: white;
+  
+  }
+
+  .header{
+    text-align: center;
+    font-size: 14pt;
+  }
+  .text{
+    padding: 5px;
+    
+  }
+}
+
+
+@keyframes slideIn{
+  from {
+    transform: translateX(-400px);
+  }to{
+    transform: translateX(0px);
+  }
+}
