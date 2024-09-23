@@ -95,3 +95,44 @@ const nJToast = (function() {
   };
 })();
 
+const nJFloatingActionButton = (function() {
+  
+  let button = document.createElement('button');
+  document.body.appendChild(button);
+  return {
+    FloatingActionButton:function(child = {}) {
+      const defaultButton = {
+        text:'<strong style="font-size: 22pt;">+</strong>',
+        position: 'bottomRight',
+        backgroundColor:'plum',
+        color:'white',
+        onclick: function(){},
+      }
+      
+      const config = {...defaultButton, ...child}
+      this.renderButton(config);
+      },
+      
+      renderButton: function(config){
+        button.classList.add('floating');
+        button.innerHTML = config.text;
+        button.style.position = 'fixed';
+        button.style.top = config.position.includes('top') ? '30px' : 'auto';
+        button.style.bottom = config.position.includes('bottom') ? '80px' : 'auto';
+        button.style.left = config.position.includes('Left') ? '30px' : 'auto';
+        button.style.right = config.position.includes('Right') ? '30px' : 'auto';
+        button.addEventListener('click', () => {
+          config.onclick();
+          button.style.backgroundColor = 'grey';
+          setTimeout(() => {
+            button.style.backgroundColor = config.backgroundColor;
+          },200);
+        });
+        button.style.color = config.color;
+        button.style.backgroundColor = config.backgroundColor;
+        
+      }
+  };
+  
+})();
+

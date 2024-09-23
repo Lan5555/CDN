@@ -76,3 +76,26 @@
     transform: translateX(0px);
   }
 }
+.floating{
+  width: 60px;
+  height:60px;
+  border-radius:40%;
+  background-color: plum;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  border:none;
+  position:fixed;
+  bottom: 80px;
+  right:30px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+.floating:hover{
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  
+}
+.floating:active{
+  background-color: black;
+}
