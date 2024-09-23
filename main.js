@@ -26,7 +26,8 @@ const nJToast = (function() {
         color: 'white',
         backgroundColor: 'green',
         titleColor: 'white',
-        textColor: 'black'
+        textColor: 'black',
+        progressBarColor: 'white'
       };
 
       const config = { ...defaultOptions, ...options };
@@ -42,7 +43,9 @@ const nJToast = (function() {
         color: 'white',
         backgroundColor: 'rgba(255, 0, 0, 0.7)',
         titleColor: 'white',
-        textColor: 'black'
+        textColor: 'black',
+        progressBarColor: 'white'
+        
       };
 
       const config = { ...defaultOptions, ...options };
@@ -73,7 +76,7 @@ const nJToast = (function() {
       header.style.color = config.titleColor;
       text.style.color = config.textColor;
       toast.style.backgroundColor = config.backgroundColor;
-
+      progressBar.style.backgroundColor = config.progressBarColor;
       // Initialize the progress bar
       progressBar.style.width = '100%';
 
