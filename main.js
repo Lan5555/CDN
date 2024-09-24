@@ -106,7 +106,7 @@ const nJFloatingActionButton = (function() {
         position: 'bottomRight',
         backgroundColor:'plum',
         color:'white',
-        onclick: function(){},
+        onclick: () => {}
       }
       
       const config = {...defaultButton, ...child}
@@ -134,5 +134,95 @@ const nJFloatingActionButton = (function() {
       }
   };
   
+})();
+
+const nJListTile = (function(){
+  
+  
+ return {
+   ListTile: function(params = {}) {
+     const defaultList = {
+       title:'Content',
+       leading:'Icon',
+       trailing:'>',
+       iconColor:'black',
+       actionColor: 'black',
+       titleColor:'black',
+       onTrailingClick: () => {}
+     }
+     const config = {...defaultList, ...params}
+     this.showTile(config);
+   },
+   showTile: function(config) {
+     let listTile = document.createElement('div');
+     let leading = document.createElement('p');
+     let trailing = document.createElement('p');
+     let title = document.createElement('p');
+     listTile.appendChild(leading);
+     listTile.appendChild(title);
+     listTile.appendChild(trailing);
+     document.body.appendChild(listTile);
+     leading.innerHTML = config.leading
+     ;
+     title.innerHTML = config.title;
+     trailing.innerHTML = config.trailing;
+     leading.style.color = config.iconColor;
+     trailing.style.color = config.actionColor;
+     title.style.color = config.titleColor;
+     
+     leading.classList.add('leading');
+     trailing.classList.add('trailing');
+     title.classList.add('title');
+     listTile.classList.add('listtile');
+     trailing.addEventListener('click', () => {
+       config.onTrailingClick();
+     });
+   }
+   
+ }
+  
+})();
+
+const nJContainer = (function() {
+  return {
+    Container: function(params = {}) {
+      const defaultStyle = {
+        width: '100%',
+        height: '200px',
+        borderRadius: '0',
+        border: 'none',
+        padding: '5px',
+        margin: '0',
+        backgroundColor: 'white',
+        item1: null,
+        item2:null,
+        item3:null,
+        item4:null
+        // Default to null, since we expect an element, not a string
+      };
+
+      const config = { ...defaultStyle, ...params };
+      this.displayContainer(config);
+    },
+
+    displayContainer: function(config) {
+      const div = document.createElement('div'); // Create a new div each time
+      div.classList.add('con');
+      div.style.width = config.width;
+      div.style.height = config.height;
+      div.style.border = config.border;
+      div.style.padding = config.padding;
+      div.style.margin = config.margin;
+      div.style.borderRadius = config.borderRadius;
+      div.style.backgroundColor = config.backgroundColor;
+      if(config.append instanceof HTMLElement){
+      div.appendChild(config.item1)
+      div.appendChild(config.item2)
+      div.appendChild(config.item3)
+      div.appendChild(config.item4)
+      }
+      document.body.appendChild(div);
+    }
+  };
 })();
 

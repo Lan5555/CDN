@@ -99,3 +99,41 @@
 .floating:active{
   background-color: black;
 }
+
+.listtile{
+  overflow-y: auto;
+  width:100%;
+  padding: 10px;
+  border:none;
+  height:auto;
+  display: flex;
+  height:30px;
+  margin-bottom: 5px;
+  box-shadow: var(--shadow-box);
+  margin-top: 5px;
+}
+.title{
+  margin-top: 5px;
+  position: absolute;
+  left:70px;
+}
+
+.leading{
+  position: absolute;
+  left:20px;
+  margin-top: 5px;
+}
+.trailing{
+  position: absolute;
+  right:30px;
+  margin-top: 7px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+.con{
+  box-shadow:var(--shadow-box);
+  background-color: white;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
