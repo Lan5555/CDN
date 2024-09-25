@@ -97,8 +97,7 @@ const nJToast = (function() {
 
 const nJFloatingActionButton = (function() {
   
-  let button = document.createElement('button');
-  document.body.appendChild(button);
+  
   return {
     FloatingActionButton:function(child = {}) {
       const defaultButton = {
@@ -114,6 +113,9 @@ const nJFloatingActionButton = (function() {
       },
       
       renderButton: function(config){
+        let button = document.createElement('button');
+        document.body.appendChild(button);
+        
         button.classList.add('floating');
         button.innerHTML = config.text;
         button.style.position = 'fixed';
