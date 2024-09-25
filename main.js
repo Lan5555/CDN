@@ -5,11 +5,7 @@ const nJToast = (function() {
   let progressBar = document.createElement('div');
 
   // Append elements to the toast
-  toast.appendChild(header);
-  toast.appendChild(text);
-  toast.appendChild(progressBar);
-  document.body.appendChild(toast);
-
+  
   // Set initial styles for progressBar
   progressBar.style.height = '5px'; // Set a height for the progress bar
   progressBar.style.width = '100%'; // Start full width
@@ -53,6 +49,11 @@ const nJToast = (function() {
     },
 
     showToast: function(config) {
+      toast.appendChild(header);
+     toast.appendChild(text);
+     toast.appendChild(progressBar);
+     document.body.appendChild(toast);
+
       toast.classList.add('toast');
       header.classList.add('header');
       text.classList.add('text');
